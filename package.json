@@ -2,7 +2,7 @@
   "name": "jsg-git-worktree-manager",
   "displayName": "JSG Git Worktree Manager",
   "description": "Create and manage git worktrees from VSCode",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "publisher": "JeffersonGoncalves",
   "license": "MIT",
   "repository": {
@@ -13,6 +13,7 @@
     "url": "https://github.com/jeffersongoncalves/git-worktree-manager/issues"
   },
   "homepage": "https://github.com/jeffersongoncalves/git-worktree-manager#readme",
+  "icon": "resources/icon.png",
   "keywords": ["git", "worktree", "worktrees", "branch", "scm"],
   "engines": {
     "vscode": "^1.85.0"
