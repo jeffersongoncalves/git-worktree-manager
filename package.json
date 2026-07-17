@@ -2,7 +2,7 @@
   "name": "jsg-git-worktree-manager",
   "displayName": "JSG Git Worktree Manager",
   "description": "Create and manage git worktrees from VSCode",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "publisher": "JeffersonGoncalves",
   "engines": {
     "vscode": "^1.85.0"
@@ -176,9 +176,12 @@
     "@typescript-eslint/parser": "^7.0.0",
     "@vscode/test-electron": "^2.3.9",
     "@vscode/test-cli": "^0.0.6",
-    "esbuild": "^0.20.0",
+    "esbuild": "^0.25.0",
     "eslint": "^8.56.0",
     "mocha": "^10.3.0",
     "typescript": "^5.3.3"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
   }
 }
