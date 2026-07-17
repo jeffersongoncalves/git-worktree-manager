@@ -1,8 +1,8 @@
 {
   "name": "jsg-git-worktree-manager",
-  "displayName": "Jefferson Gonçalves",
+  "displayName": "JSG Git Worktree Manager",
   "description": "Create and manage git worktrees from VSCode",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "publisher": "JeffersonGoncalves",
   "engines": {
     "vscode": "^1.85.0"
