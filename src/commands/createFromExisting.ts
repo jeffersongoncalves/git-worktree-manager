@@ -22,7 +22,7 @@ export function registerCreateFromExisting(
       if (!branch) return;
 
       const config = getConfig();
-      const suggested = suggestWorktreePath(repoPath, branch, config.defaultPath, config.pathNamingConvention);
+      const suggested = suggestWorktreePath(repoPath, branch, config.defaultPath);
       const targetPath = await inputWorktreePath(suggested);
       if (!targetPath) return;
 

@@ -24,7 +24,6 @@ Create and manage git worktrees from VSCode without leaving the editor.
 | Setting | Default | Description |
 |---|---|---|
 | `gitWorktree.defaultPath` | `../` | Base directory (relative to the repo) suggested for new worktrees |
-| `gitWorktree.pathNamingConvention` | `branch-name` | `branch-name`, `repo-branch`, or `custom` |
 | `gitWorktree.openBehavior` | `ask` | `newWindow`, `sameWindow`, `ask`, or `none` |
 | `gitWorktree.confirmRemove` | `true` | Ask for confirmation before removing a worktree |
 

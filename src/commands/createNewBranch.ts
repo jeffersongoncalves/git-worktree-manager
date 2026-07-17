@@ -27,7 +27,7 @@ export function registerCreateNewBranch(
         current;
 
       const config = getConfig();
-      const suggested = suggestWorktreePath(repoPath, newBranch, config.defaultPath, config.pathNamingConvention);
+      const suggested = suggestWorktreePath(repoPath, newBranch, config.defaultPath);
       const targetPath = await inputWorktreePath(suggested);
       if (!targetPath) return;
 

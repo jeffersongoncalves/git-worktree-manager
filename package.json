@@ -2,7 +2,7 @@
   "name": "jsg-git-worktree-manager",
   "displayName": "JSG Git Worktree Manager",
   "description": "Create and manage git worktrees from VSCode",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "publisher": "JeffersonGoncalves",
   "license": "MIT",
   "repository": {
@@ -148,12 +148,6 @@
           "type": "string",
           "default": "../",
           "description": "Default base directory for new worktrees (relative to the main repository)"
-        },
-        "gitWorktree.pathNamingConvention": {
-          "type": "string",
-          "enum": ["branch-name", "repo-branch", "custom"],
-          "default": "branch-name",
-          "description": "Naming convention used to suggest the worktree directory"
         },
         "gitWorktree.openBehavior": {
           "type": "string",
