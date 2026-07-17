@@ -3,7 +3,7 @@
   "displayName": "Git Worktree Manager",
   "description": "Create and manage git worktrees from VSCode",
   "version": "0.1.0",
-  "publisher": "local",
+  "publisher": "JeffersonGoncalves",
   "engines": {
     "vscode": "^1.85.0"
   },
