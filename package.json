@@ -1,0 +1,184 @@
+{
+  "name": "git-worktree-manager",
+  "displayName": "Git Worktree Manager",
+  "description": "Create and manage git worktrees from VSCode",
+  "version": "0.1.0",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["SCM Providers", "Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitWorktree.createFromExisting",
+        "title": "Create Worktree from Existing Branch",
+        "category": "Git Worktree",
+        "icon": "$(git-branch)"
+      },
+      {
+        "command": "gitWorktree.createNewBranch",
+        "title": "Create Worktree with New Branch",
+        "category": "Git Worktree",
+        "icon": "$(new-folder)"
+      },
+      {
+        "command": "gitWorktree.list",
+        "title": "List Worktrees",
+        "category": "Git Worktree"
+      },
+      {
+        "command": "gitWorktree.remove",
+        "title": "Remove Worktree",
+        "category": "Git Worktree",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "gitWorktree.prune",
+        "title": "Prune Worktrees",
+        "category": "Git Worktree",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "gitWorktree.refresh",
+        "title": "Refresh",
+        "category": "Git Worktree",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "gitWorktree.open",
+        "title": "Open Worktree",
+        "category": "Git Worktree",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "gitWorktree.copyPath",
+        "title": "Copy Path",
+        "category": "Git Worktree",
+        "icon": "$(copy)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gitWorktreeManager",
+          "title": "Git Worktrees",
+          "icon": "resources/worktree.svg"
+        }
+      ]
+    },
+    "views": {
+      "gitWorktreeManager": [
+        {
+          "id": "gitWorktree.treeView",
+          "name": "Worktrees"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "gitWorktree.createFromExisting",
+          "when": "view == gitWorktree.treeView",
+          "group": "navigation@1"
+        },
+        {
+          "command": "gitWorktree.createNewBranch",
+          "when": "view == gitWorktree.treeView",
+          "group": "navigation@2"
+        },
+        {
+          "command": "gitWorktree.refresh",
+          "when": "view == gitWorktree.treeView",
+          "group": "navigation@3"
+        },
+        {
+          "command": "gitWorktree.prune",
+          "when": "view == gitWorktree.treeView",
+          "group": "navigation@4"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "gitWorktree.open",
+          "when": "view == gitWorktree.treeView && viewItem == worktree",
+          "group": "inline@1"
+        },
+        {
+          "command": "gitWorktree.remove",
+          "when": "view == gitWorktree.treeView && viewItem == worktree",
+          "group": "inline@2"
+        },
+        {
+          "command": "gitWorktree.copyPath",
+          "when": "view == gitWorktree.treeView && viewItem == worktree",
+          "group": "9_copy"
+        }
+      ],
+      "commandPalette": [
+        { "command": "gitWorktree.createFromExisting" },
+        { "command": "gitWorktree.createNewBranch" },
+        { "command": "gitWorktree.list" },
+        { "command": "gitWorktree.remove" },
+        { "command": "gitWorktree.prune" },
+        { "command": "gitWorktree.refresh" },
+        { "command": "gitWorktree.open", "when": "false" },
+        { "command": "gitWorktree.copyPath", "when": "false" }
+      ]
+    },
+    "configuration": {
+      "title": "Git Worktree Manager",
+      "properties": {
+        "gitWorktree.defaultPath": {
+          "type": "string",
+          "default": "../",
+          "description": "Default base directory for new worktrees (relative to the main repository)"
+        },
+        "gitWorktree.pathNamingConvention": {
+          "type": "string",
+          "enum": ["branch-name", "repo-branch", "custom"],
+          "default": "branch-name",
+          "description": "Naming convention used to suggest the worktree directory"
+        },
+        "gitWorktree.openBehavior": {
+          "type": "string",
+          "enum": ["newWindow", "sameWindow", "ask", "none"],
+          "default": "ask",
+          "description": "What to do after creating a worktree"
+        },
+        "gitWorktree.confirmRemove": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask for confirmation before removing a worktree"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "package": "node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "pretest": "npm run compile-tests && npm run compile",
+    "test": "vscode-test",
+    "lint": "eslint src",
+    "vscode:prepublish": "npm run package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.11.0",
+    "@types/mocha": "^10.0.6",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/test-cli": "^0.0.6",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.56.0",
+    "mocha": "^10.3.0",
+    "typescript": "^5.3.3"
+  }
+}
