@@ -175,14 +175,14 @@
   },
   "devDependencies": {
     "@types/vscode": "^1.134.0",
-    "@types/node": "^26.2.0",
+    "@types/node": "^26.4.0",
     "@types/mocha": "^10.0.6",
-    "@typescript-eslint/eslint-plugin": "^8.67.0",
+    "@typescript-eslint/eslint-plugin": "^8.68.0",
     "@typescript-eslint/parser": "^8.67.0",
     "@vscode/test-electron": "^3.1.0",
     "@vscode/test-cli": "^0.0.15",
     "esbuild": "^0.28.2",
-    "eslint": "^10.9.0",
+    "eslint": "^10.9.1",
     "mocha": "^11.8.0",
     "typescript": "^7.0.2"
   },
