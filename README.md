@@ -1,5 +1,7 @@
 # Git Worktree Manager
 
+![Git Worktree Manager](banners/git-worktree-manager.png)
+
 Create and manage git worktrees from VSCode without leaving the editor.
 
 ## Features
