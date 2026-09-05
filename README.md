@@ -9,6 +9,15 @@ Create and manage git worktrees from VSCode without leaving the editor.
 - **Tree view** — dedicated Activity Bar view listing every worktree, with the main worktree highlighted and locked/prunable badges.
 - **List / remove / prune** — Quick Pick driven flows for listing worktrees, removing one (with confirmation and a force fallback for dirty trees), and pruning stale references.
 
+## Requirements
+
+- VS Code 1.85+
+- A git repository open in the workspace
+
+## Installation
+
+Install from the `.vsix` (see [Development](#development)) via **Extensions → ⋯ → Install from VSIX...**, or from the VS Code Marketplace once published.
+
 ## Commands
 
 | Command | Description |
@@ -41,3 +50,11 @@ npm test      # run unit tests
 npm run lint  # eslint
 npm run package && npx vsce package  # build a .vsix
 ```
+
+## License
+
+[MIT](LICENSE)
+
+## Author
+
+**Jefferson Gonçalves** — [GitHub](https://github.com/jeffersongoncalves)
