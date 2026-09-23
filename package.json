@@ -14,11 +14,20 @@
   },
   "homepage": "https://github.com/jeffersongoncalves/git-worktree-manager#readme",
   "icon": "resources/icon.png",
-  "keywords": ["git", "worktree", "worktrees", "branch", "scm"],
+  "keywords": [
+    "git",
+    "worktree",
+    "worktrees",
+    "branch",
+    "scm"
+  ],
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["SCM Providers", "Other"],
+  "categories": [
+    "SCM Providers",
+    "Other"
+  ],
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -131,14 +140,32 @@
         }
       ],
       "commandPalette": [
-        { "command": "gitWorktree.createFromExisting" },
-        { "command": "gitWorktree.createNewBranch" },
-        { "command": "gitWorktree.list" },
-        { "command": "gitWorktree.remove" },
-        { "command": "gitWorktree.prune" },
-        { "command": "gitWorktree.refresh" },
-        { "command": "gitWorktree.open", "when": "false" },
-        { "command": "gitWorktree.copyPath", "when": "false" }
+        {
+          "command": "gitWorktree.createFromExisting"
+        },
+        {
+          "command": "gitWorktree.createNewBranch"
+        },
+        {
+          "command": "gitWorktree.list"
+        },
+        {
+          "command": "gitWorktree.remove"
+        },
+        {
+          "command": "gitWorktree.prune"
+        },
+        {
+          "command": "gitWorktree.refresh"
+        },
+        {
+          "command": "gitWorktree.open",
+          "when": "false"
+        },
+        {
+          "command": "gitWorktree.copyPath",
+          "when": "false"
+        }
       ]
     },
     "configuration": {
@@ -151,7 +178,12 @@
         },
         "gitWorktree.openBehavior": {
           "type": "string",
-          "enum": ["newWindow", "sameWindow", "ask", "none"],
+          "enum": [
+            "newWindow",
+            "sameWindow",
+            "ask",
+            "none"
+          ],
           "default": "ask",
           "description": "What to do after creating a worktree"
         },
@@ -174,17 +206,18 @@
     "vscode:prepublish": "npm run package"
   },
   "devDependencies": {
-    "@types/vscode": "^1.137.0",
-    "@types/node": "^26.6.1",
+    "@eslint/js": "^10.0.1",
     "@types/mocha": "^10.0.6",
+    "@types/node": "^26.6.1",
+    "@types/vscode": "^1.137.0",
     "@typescript-eslint/eslint-plugin": "^8.70.0",
     "@typescript-eslint/parser": "^8.67.0",
-    "@vscode/test-electron": "^3.1.0",
     "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
     "esbuild": "^0.28.2",
     "eslint": "^10.10.0",
     "mocha": "^12.0.1",
-    "typescript": "^7.0.2"
+    "typescript": "~6.0.3"
   },
   "overrides": {
     "serialize-javascript": "^7.0.5"
